@@ -1,0 +1,41 @@
+.env -> colocamos tudo que tiver dados sensiveis no git dentro de uma string, essa string vai ser importada como process.env.stringEscolhida;
+
+mongoose -> vai modelar os nossos dados e garantir que está sendo salvo na base de dados da forma com que queremos salvar 
+ --> Quando app.emit('pronto') for executado
+ --> app.on('pronto') executa o que está entre suas chaves;
+
+session -> identifica o navegador do cliente, e salva seus dados nos cookies;
+
+MongoStore -> salva sessões na base de dados;
+
+flash -> mensagens auto-destrutivas, podem ser utilizados somente uma vez;
+
+routes -> são as rotas da nossa aplicaçãp (/home, /contato etc);
+
+path -> pra trabalhar em caminhos;
+
+helmet -> é uma recomendação do express, deixa nossa aplicação mais segura
+ --> detalhes na documentação;
+
+
+csrf -> também relacionado a segurança, cria tokens, 
+ --> faz com que sites externos não postem nada na nossa aplicação;
+
+middleware -> são funções que executa dentro das rotas
+ --> pode ser executado antes ou depois;
+
+app.use(express.urlencoded) -> permite postar formulário dentro da nossa aplicação
+
+app.use(express.static) -> Arquivos estáticos
+ --> imagens, css etc
+
+app.set('views') -> os arquivos renderizados na tela
+
+app.set('view engine', 'ejs') -> engine utilizada
+ --> O ejs é muito similar ao html
+
+
+O padrão usado é MVC (models, views, controllers)
+ --> Controller decide qual rota vai usar qual views e qual model
+ --> Model trabalha com dados/base de dados
+ --> view o que vai aparecer na tela

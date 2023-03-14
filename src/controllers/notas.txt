@@ -1,0 +1,12 @@
+Login controller: como o usuário está sendo registrado?
+
+ 1º Se não der erro
+  --> assim que a sessão for salva, ele redireciona para a pagina de login
+  --> uma mensagem de sucesso será enviada
+  --> como ele apenas se registrou, eu não quero que ele prossiga no site, pra isso ele vai ter que fazer o login
+
+ 2º Se existir algum erro, será adicionado ao array errors
+ --> uma variável flash será criada, e vai receber o array de errors
+  -> essa variável pode ser usada em qualquer lugar do código
+ --> return res.redirect('/login/index') 
+  -> Como não quero que ele prossiga no site, ele não vai passar da tela de login

@@ -1,0 +1,2 @@
+meuMiddlewareGlobal --> as mensagens de flash vão para res.locals
+  -> assim poderá ser acessada de qualquer lugar do código
