@@ -1,0 +1,30 @@
++ Os inputs de registro recebem o valor que o usuário colocou. Quando o formulário é enviado é retornado uma chave
+ -> O nome das chaves são o nome da caixa do inputs
+    --> O valor é o valor passado élo usuário
+
+Login Model: como o usuário está sendo registrado?
+
+ 1º func: cleanUp
+  --> Verifica se o valor passado é uma string, se não for, a chave recebe um valor vazio
+  --> ela também garante que o parâmetro passado vai ser um objeto com as chaves do input
+  input
+
+ 2º func: valida
+  --> executa a cleanUp
+  --> Verifica se o email passado é realmente um email
+    -> Se não for, adiciona um erro ao array errors
+  --> Verifica se a senha passada tem de 3 a 50 caracteres
+    -> Se não for, adiciona um erro ao array errors
+
+ 3º func: async register
+  --> Ela vai executar a func valida
+   -> Se quando a func for executada tiver adicionada algum erro, ela para.
+  --> executa a func userExists
+   -> Se quando a func for executada tiver adicionada algum erro, ela para.
+  --> bcrypt transforma a senha do usuário em hash, assim a senha não fica visível no banco de dados
+  --> adiciona as informações de registro ao usuário, mas com o modelo do model, e envia ao Banco de dados
+ 
+ 4º func: async userExists
+ --> findOne verifica se tem algum email no banco de dados igual ao email que o usuário colocou
+  -> Se tiver ela adiciona um erro ao array de errors
+
