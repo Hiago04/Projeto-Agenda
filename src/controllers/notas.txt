@@ -1,0 +1,16 @@
+res.render('contato', {
+         contato: {} });
+
+Preenche o contato com espaço vazio, caso você envie algum espaço vazio
+
+
+exports.register:
+ --> contato recebe a func Contato
+ --> assim que a sessão for salva
+ --> console.log(contato): retornou as info que estão no Banco de Dados
+
+exports.editIndex:
+ --> No routes existe essa linha ´route.get('/contato/index/:id', loginRequired, contatoController.editIndex);´
+
+ --> req.params.id -> retorna o id da url
+
