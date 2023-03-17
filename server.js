@@ -51,6 +51,13 @@ app.use(csrf());
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(meuMiddlewareGlobal);
+app.use((req, res, next) => {
+    res.setHeader(
+        "Content-Security-Policy",
+        "script-src 'self' https://cdn.jsdelivr.net"
+    );
+    next();
+});
 app.use(routes);
 
 app.on('pronto', () => {
