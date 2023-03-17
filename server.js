@@ -4,7 +4,10 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true , useUnifiedTopology: true }) //retorna promise
+mongoose.connect(process.env.CONNECTIONSTRING, { 
+    useNewUrlParser: true,
+     useUnifiedTopology: true, useFindAndModify:false 
+}) //retorna promise
     .then(() => {
         console.log('Conectei com a Base de dados');
         app.emit('pronto')
