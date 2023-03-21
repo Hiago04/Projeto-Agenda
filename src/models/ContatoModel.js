@@ -57,7 +57,7 @@ Contato.prototype.edit = async function (id) {
 }
 
 
-//métodos estátiocos(não tem acesso ao prototype nem ao this)
+//métodos estáticos(não tem acesso ao prototype nem ao this)
 Contato.buscaPorId = async function (id) {
     if(typeof id !== 'string') return;
     const contato = await ContatoModel.findById(id);
@@ -73,6 +73,7 @@ Contato.buscaContatos = async function () {
 
 Contato.delete = async function (id) {
     if(typeof id !== 'string') return;
+    const contato = await ContatoModel.findOneAndDelete({_id: id})
 
      return contato;
 };
